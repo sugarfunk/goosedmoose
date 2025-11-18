@@ -1,0 +1,121 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/**
+ * Goosed Moose Brand Colors
+ * Based on the existing brand identity from gm-parked
+ */
+:root {
+  /* Primary Colors */
+  --background: #000000;        /* Black - main background */
+  --foreground: #ffffff;        /* White - text and accents */
+
+  /* Secondary Colors */
+  --grey-light: #f1f1f1;       /* Light grey for subtle text */
+  --grey-medium: #9e9e9e;      /* Medium grey for borders */
+  --grey-dark: #222222;        /* Dark grey for cards/sections */
+
+  /* Accent Colors */
+  --accent-primary: #ffffff;   /* White for buttons/CTAs */
+  --accent-hover: #f1f1f1;     /* Light grey for hover states */
+
+  /* Functional Colors */
+  --success: #4CAF50;          /* Green for success messages */
+  --error: #f44336;            /* Red for errors */
+  --warning: #ff9800;          /* Orange for warnings */
+  --info: #2196F3;             /* Blue for info */
+}
+
+@theme inline {
+  /* Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-grey-light: var(--grey-light);
+  --color-grey-medium: var(--grey-medium);
+  --color-grey-dark: var(--grey-dark);
+  --color-accent: var(--accent-primary);
+  --color-accent-hover: var(--accent-hover);
+  --color-success: var(--success);
+  --color-error: var(--error);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+
+  /* Typography */
+  --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, 'Courier New', monospace;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+}
+
+/**
+ * Base Styles
+ */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/**
+ * Utility Classes
+ */
+.container-custom {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/**
+ * Link Hover Effect
+ */
+a {
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/**
+ * Button Base Styles
+ */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.btn-primary:hover {
+  background: var(--grey-light);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--foreground);
+}
+
+.btn-secondary:hover {
+  background: var(--foreground);
+  color: var(--background);
+}
