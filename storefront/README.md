@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Goosed Moose Storefront
 
-## Getting Started
+Modern e-commerce storefront for Goosed Moose artisan candles, built with Next.js 14 and integrated with Medusa backend.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### ✅ Implemented
+
+- **Landing Page**: Eye-catching homepage with brand identity, featured products, and CTAs
+- **Product Catalog**: Browse all candles with filtering and grid display
+- **Product Details**: Detailed product pages with variant selection, image galleries, and add-to-cart
+- **Shopping Cart**: Full cart functionality with quantity updates, item removal, and order summary
+- **Brand Integration**: Goosed Moose colors, fonts (Montserrat), and assets throughout
+- **Responsive Design**: Mobile-first design that works on all devices
+- **Cart Persistence**: Cart data saved in localStorage
+- **SEO Optimized**: Proper metadata, Open Graph tags, and semantic HTML
+
+### 🚧 Future Enhancements
+
+- **Checkout Flow**: Stripe payment integration (placeholder link exists)
+- **Customer Accounts**: Order history and saved addresses
+- **Product Reviews**: Customer testimonials and ratings
+- **Search**: Full-text product search
+- **Filtering**: Filter by scent, size, price range
+
+## Quick Start
+
+### Prerequisites
+
+- Node.js 18+ installed
+- Medusa backend running at `http://localhost:9000`
+- Products seeded in the backend
+
+### Installation
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Configure environment:**
+   ```bash
+   cp .env.local.example .env.local
+   # Edit .env.local with your values
+   ```
+
+3. **Start development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser:**
+   ```
+   http://localhost:3000
+   ```
+
+## Environment Variables
+
+See `.env.local.example` for all available options. Key variables:
+
+```env
+NEXT_PUBLIC_MEDUSA_BACKEND_URL=http://localhost:9000
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_your_key
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+storefront/
+├── src/
+│   ├── app/                  # Next.js App Router pages
+│   │   ├── page.tsx          # Landing page
+│   │   ├── products/         # Product pages
+│   │   ├── cart/             # Shopping cart
+│   │   └── about/            # About page
+│   ├── components/           # Reusable components
+│   │   ├── layout/           # Header, Footer
+│   │   └── product/          # Product components
+│   └── lib/                  # Utilities and context
+│       ├── medusa-client.ts  # Medusa SDK
+│       └── cart-context.tsx  # Cart state
+└── public/images/brand/      # Brand assets
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Documentation
 
-## Learn More
+For detailed information, see:
 
-To learn more about Next.js, take a look at the following resources:
+- **[../docs/SETUP.md](../docs/SETUP.md)** - Complete setup guide
+- **[../docs/ARCHITECTURE.md](../docs/ARCHITECTURE.md)** - System architecture
+- **[../docs/DEPLOYMENT.md](../docs/DEPLOYMENT.md)** - Deployment guide
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Common Commands
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run dev        # Start development server
+npm run build      # Build for production
+npm run start      # Run production build
+npm run lint       # Run ESLint
+```
 
-## Deploy on Vercel
+## Technologies
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Next.js 14 with App Router
+- TypeScript
+- Tailwind CSS v4
+- Medusa JS SDK
+- React Context for state management
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+**Made with ❤️ for Goosed Moose** 🕯️
